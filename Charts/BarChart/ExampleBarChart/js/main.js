@@ -37,12 +37,12 @@ g.append("text")
     .text("Height (m)");
 
 d3.json("data/buildings.json").then(function(data){
-    console.log(data);
+
 
     data.forEach(function(d){
         d.height = +d.height;
     });
-
+    console.log(data);
     var x = d3.scaleBand()
         .domain(data.map(function(d){ return d.name; }))
         .range([0, width])
